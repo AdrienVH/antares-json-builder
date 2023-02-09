@@ -1,0 +1,15 @@
+version: "3"
+services:
+  front:
+    build: ./front/
+    networks:
+      - ingress
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.antares-json-builder.rule=Host(`antares.adrienvh.fr`)"
+      - "traefik.http.routers.antares-json-builder.entrypoints=websecure"
+      - "traefik.http.routers.antares-json-builder.tls.certresolver=letsencrypt"
+networks:
+  ingress:
+    name: gateway_ingress
+    external: true

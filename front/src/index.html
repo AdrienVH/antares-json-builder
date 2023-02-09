@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Envoyer un message ANTARES via JSON</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!-- CSS -->
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+		<link href="https://openlayers.org/en/v6.3.1/css/ol.css" type="text/css" rel="stylesheet">
+		<link href="./main.css?v=pojdzoiahfuza" rel="stylesheet">
+		<!-- CSS -->
+	</head>
+	<body>
+		<div id="wrapper">
+			<table>
+				<tr>
+					<td class="label">Date :</td>
+					<td class="input"><input type="text" id="top" value="" /></td>
+				</tr>
+				<tr>
+					<td>Latitude (WGS84) :</td>
+					<td><input type="text" id="lt" value="48.538911" /></td>
+				</tr>
+				<tr>
+					<td>Longitude (WGS84) :</td>
+					<td><input type="text" id="lg" value="2.659580" /></td>
+				</tr>
+				<tr>
+					<td>Code du CGO :</td>
+					<td><input type="text" id="codeCgo" value="77-cgo" /></td>
+				</tr>
+				<tr>
+					<td>Adresse RFGI :</td>
+					<td><input type="text" id="adresseRFGI" value="770220050" /></td>
+				</tr>
+				<tr>
+					<td>Code du moyen :</td>
+					<td><input type="text" id="codeMoyen" value="77_16205" /></td>
+				</tr>
+				<tr>
+					<td>Nom du moyen :</td>
+					<td><input type="text" id="nomMoyen" value="FPT 1" /></td>
+				</tr>
+				<tr>
+					<td>Code du status :</td>
+					<td>
+						<select id="codeStatus">
+							<option value="">Pas de status (localisation seule)</option>
+							<option value="1">Code 1</option>
+							<option value="2">Code 2</option>
+							<option value="3">Code 3</option>
+							<option value="4">Code 4</option>
+							<option value="5">Code 5</option>
+							<option value="218">Code 218 (SOS)</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<div id="mapblock">
+				<div id="map"></div>
+				<div id="title">Localisation</div>
+			</div>
+			<p class="button build">Copier cet objet JSON</p>
+			<p class="json"></p>
+			<div id="search">
+				<h2>Rechercher une adresse :</h2>
+				<input type="text" id="query" value="" placeholder="Adresse postale, lieu-dit, etc." />
+				<p class="button search">Rechercher</p>
+				<ul class="results"></ul>
+				<h2 class="recents">Adresses récentes :</h2>
+				<ul class="recents"></ul>
+				<p class="cancel">Annuler</p>
+			</div>
+			<div id="showsearchpanel">Rechercher<br/>une adresse</div>
+		</div>
+		<!-- JAVASCRIPT -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://openlayers.org/en/v6.3.1/build/ol.js"></script>
+		<script src="./main.js?v=pojdzoiahfuza"></script>
+		<!-- JAVASCRIPT -->
+	</body>
+</html>
