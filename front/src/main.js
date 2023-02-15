@@ -48,9 +48,13 @@ function buildJson(){
 	// (0 / Not used) ?
 	// dateLocalisation
 	objet.data.vehicule.dateLocalisation = $('#top').val() // ou locationDate ?
+	// Digital
+	objet.data.vehicule.digital = {}
+	objet.data.vehicule.digital.input = 0
+	objet.data.vehicule.digital.output = 0
 	
 	//console.log(objet)
-	return JSON.stringify(objet)
+	return JSON.stringify(objet, null, 4)
 }
 
 $(".build").click(function() {
@@ -236,7 +240,7 @@ $(".json").click(function() {
     selection.addRange(range);
 	document.execCommand("Copy");
 	selection.removeAllRanges();
-    alert("Le contenu de ce JSON a été copié dans le presse-papiers. Vous pouvez maintenant le coller dans votre console RabbitMQ, afin de l'envoyer manuellement.");
+    alert("Ce message au format JSON a été copié dans le presse-papiers. Vous pouvez maintenant le coller dans votre console RabbitMQ, afin de l'envoyer manuellement.");
 });
 
 $(function () {
