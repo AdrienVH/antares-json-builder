@@ -17,41 +17,42 @@ function buildJson(){
 	// Moyen
 	objet.data.vehicule = {}
 	objet.data.vehicule.id = $('#codeMoyen').val()
-	objet.data.vehicule.nom = $('#nomMoyen').val()
+	objet.data.vehicule.nom = 'Le nom du moyen'
 	// Statut
 	const statut = $('#codeStatus').val()
 	if (statut == '') {
 		objet.ordre = 'ANTARES_LOCATION_VEHICLE'
+		// Digital
+		objet.data.vehicule.digital = {}
+		objet.data.vehicule.digital.input = 0
+		objet.data.vehicule.digital.output = 0
+		// Tracking
+		objet.data.vehicule.tracking = 'OK' // Pas utilisé encore
 	} else {
 		objet.ordre = 'ANTARES_LOCALIZED_OPERATIONAL_STATUS_VEHICLE'
 		// Statut
 		objet.data.vehicule.statut = {}
-		objet.data.vehicule.statut.id = 'fezfneofez'
+		objet.data.vehicule.statut.id = 'Le libellé du statut'
 		objet.data.vehicule.statut.number = parseInt(statut)
-		// Ack
-		objet.data.vehicule.acknoledgement = false
-		// datingOrigin
-		objet.data.vehicule.datingOrigin = 'vehicule'
+		// Aknowledgement
+		objet.data.vehicule.acknoledgement = {}
+		objet.data.vehicule.acknoledgement.requis = true
+		objet.data.vehicule.acknoledgement.message = 'Accusé de reception requis'
+		// origineDate
+		objet.data.vehicule.origineDate = 'véhicule'
 		// groupCommField
-		objet.data.vehicule.groupCommField = '264'
+		objet.data.vehicule.groupCommunication = 'Le numéro du canal radio'
 	}
 	// Coordonnées
 	objet.data.vehicule.coordonnees = {}
 	objet.data.vehicule.coordonnees.longitude = parseFloat($('#lg').val())
 	objet.data.vehicule.coordonnees.latitude = parseFloat($('#lt').val())
-	// Tracking
-	objet.data.vehicule.tracking = 'OK'
 	// statutLocalisation
-	objet.data.vehicule.statutLocalisation = {} // ou locationStatus ?
+	objet.data.vehicule.statutLocalisation = {} // ou locationStatus ? Bha OSEF car pas utilisé
 	objet.data.vehicule.statutLocalisation.code = '44'
 	objet.data.vehicule.statutLocalisation.libelle = 'actif'
-	// (0 / Not used) ?
 	// dateLocalisation
 	objet.data.vehicule.dateLocalisation = $('#top').val() // ou locationDate ?
-	// Digital
-	objet.data.vehicule.digital = {}
-	objet.data.vehicule.digital.input = 0
-	objet.data.vehicule.digital.output = 0
 	
 	//console.log(objet)
 	return JSON.stringify(objet, null, 4)
