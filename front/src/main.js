@@ -1,8 +1,9 @@
 function buildJson(){
 	const objet = {
 		source: 'ANTARES',
-		ordre: '',
-		type: 'COMMAND',
+		entity: '',
+		type: 'EVENT',
+		mutation: 'CREATE',
 		id: 'd0538784-5402-426a-a3d1-f424bc71f9d7',
 		data: { },
 		date: '', // FIXME date ou eventDate ?
@@ -21,7 +22,7 @@ function buildJson(){
 	// Statut
 	const statut = $('#codeStatus').val()
 	if (statut == '') {
-		objet.ordre = 'ANTARES_LOCATION_VEHICLE'
+		objet.entity = 'ANTARES_LOCATION_VEHICLE'
 		// Digital
 		objet.data.vehicule.digital = {}
 		objet.data.vehicule.digital.input = 0
@@ -29,7 +30,7 @@ function buildJson(){
 		// Tracking
 		objet.data.vehicule.tracking = 'OK' // Pas utilisé encore
 	} else {
-		objet.ordre = 'ANTARES_LOCALIZED_OPERATIONAL_STATUS_VEHICLE'
+		objet.entity = 'ANTARES_LOCALIZED_OPERATIONAL_STATUS_VEHICLE'
 		// Statut
 		objet.data.vehicule.statut = {}
 		objet.data.vehicule.statut.id = 'Le libellé du statut'
