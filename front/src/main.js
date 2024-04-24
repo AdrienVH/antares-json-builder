@@ -13,11 +13,11 @@ function buildJson(){
 	setTimeOfPositionning()
 	objet.date = $('#top').val()
 	// Code du CGO
-	objet.data.codeCGO = $('#codeCgo').val()
+	objet.data.codeCgo = $('#codeCgo').val()
 	objet.data.adresseRFGI = $('#adresseRFGI').val()
 	// Moyen
 	objet.data.vehicule = {}
-	objet.data.vehicule.id = $('#codeMoyen').val()
+	objet.data.vehicule.id = 'Le code du moyen'
 	objet.data.vehicule.nom = 'Le nom du moyen'
 	// Statut
 	const statut = $('#codeStatus').val()
