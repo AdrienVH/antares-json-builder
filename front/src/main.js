@@ -17,7 +17,7 @@ function buildJson(){
 	objet.data.adresseRFGI = $('#adresseRFGI').val()
 	// Moyen
 	objet.data.vehicule = {}
-	objet.data.vehicule.id = 'Le code du moyen'
+	objet.data.vehicule.id = $('#codeMoyen').val()
 	objet.data.vehicule.nom = 'Le nom du moyen'
 	// Statut
 	const statut = $('#codeStatus').val()
