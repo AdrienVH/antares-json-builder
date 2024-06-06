@@ -14,7 +14,7 @@ function buildJson(){
 	objet.date = $('#top').val()
 	// Code du CGO
 	objet.data.codeCgo = $('#codeCgo').val()
-	objet.data.adresseRFGI = $('#adresseRFGI').val()
+	objet.data.radioId = $('#radioId').val()
 	// Moyen
 	objet.data.vehicule = {}
 	objet.data.vehicule.id = $('#codeMoyen').val()
@@ -49,7 +49,7 @@ function buildJson(){
 	objet.data.vehicule.coordonnees.longitude = parseFloat($('#lg').val())
 	objet.data.vehicule.coordonnees.latitude = parseFloat($('#lt').val())
 	// statutLocalisation
-	objet.data.vehicule.statutLocalisation = {} // ou locationStatus ? Bha OSEF car pas utilisé
+	objet.data.vehicule.statutLocalisation = {} // ou locationStatus ?
 	objet.data.vehicule.statutLocalisation.code = '44'
 	objet.data.vehicule.statutLocalisation.libelle = 'actif'
 	// dateLocalisation
