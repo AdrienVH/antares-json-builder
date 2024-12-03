@@ -7,7 +7,7 @@ function buildJson(){
 		id: 'd0538784-5402-426a-a3d1-f424bc71f9d7',
 		data: { },
 		date: '', // FIXME date ou eventDate ?
-		version: 1.0
+		version: 2.0
 	}
 	// Date
 	setTimeOfPositionning()
