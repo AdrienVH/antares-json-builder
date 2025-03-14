@@ -50,7 +50,7 @@ function buildJson(){
 	objet.data.vehicule.coordonnees.latitude = parseFloat($('#lt').val())
 	// statutLocalisation
 	objet.data.vehicule.statutLocalisation = {} // ou locationStatus ?
-	objet.data.vehicule.statutLocalisation.code = '4'
+	objet.data.vehicule.statutLocalisation.code = 4
 	objet.data.vehicule.statutLocalisation.libelle = 'actif'
 	// dateLocalisation
 	objet.data.vehicule.dateLocalisation = $('#top').val() // ou locationDate ?
